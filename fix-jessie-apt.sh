@@ -1,6 +1,6 @@
 #!/bin/bash
 # fix-jessie-apt.sh
-# Repairs archived Jessie APT sources + sets time (EST)
+# Repairs archived Jessie APT sources + sets time to America/New_York
 
 set -euo pipefail
 
@@ -9,20 +9,20 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-echo "[*] Setting timezone to EST (America/New_York)..."
+echo "[*] Setting timezone to America/New_York..."
+if [ -e /usr/share/zoneinfo/America/New_York ]; then
+  ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+  echo "America/New_York" > /etc/timezone
+else
+  echo "[!] Zoneinfo file not found, skipping timezone link."
+fi
 
-# Set timezone
-ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
-echo "America/New_York" > /etc/timezone
-
-# Try to sync time (multiple fallbacks)
 echo "[*] Attempting time synchronization..."
-
 if command -v ntpdate >/dev/null 2>&1; then
   ntpdate -u pool.ntp.org || true
 elif command -v ntpd >/dev/null 2>&1; then
   ntpd -q -p pool.ntp.org || true
-elif busybox ntpd -h >/dev/null 2>&1; then
+elif command -v busybox >/dev/null 2>&1; then
   busybox ntpd -q -p pool.ntp.org || true
 else
   echo "[!] No NTP client available. Time may be incorrect."
@@ -70,7 +70,6 @@ Acquire::AllowDowngradeToInsecureRepositories "true";
 EOF
 
 echo "[*] Removing invalid APT::Default-Release \"jessie\" lines if present..."
-
 for f in /etc/apt/apt.conf /etc/apt/apt.conf.d/*; do
   [ -e "$f" ] || continue
   if grep -q 'APT::Default-Release[[:space:]]*"jessie"' "$f" 2>/dev/null; then
