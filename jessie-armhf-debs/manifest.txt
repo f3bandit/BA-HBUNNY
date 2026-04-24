@@ -210,3 +210,4 @@ libblas3_1.2.20110419-10_armhf.deb
 libgfortran3_4.9.2-10+deb8u1_armhf.deb
 libblas-common_1.2.20110419-10_armhf.deb
 strace_4.9-2_armhf.deb
+zip_3.0-8_armhf.deb
