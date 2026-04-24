@@ -191,3 +191,14 @@ pkg-config_0.28-1_armhf.deb
 unzip_6.0-16+deb8u3_armhf.deb
 xz-utils_5.1.1alpha+20120614-2+b3_armhf.deb
 sqlite3_3.8.7.1-1+deb8u2_armhf.deb
+aircrack-ng_1.2-0~beta3-4_armhf.deb
+iw_3.17-1_armhf.deb
+wireless-tools_30~pre9-8_armhf.deb
+libnl-3-200_3.2.24-2_armhf.deb
+libnl-genl-3-200_3.2.24-2_armhf.deb
+libpcap0.8_1.6.2-2_armhf.deb
+libpcre3_8.35-3.3+deb8u4_armhf.deb
+libsqlite3-0_3.8.7.1-1+deb8u2_armhf.deb
+zlib1g_1.2.8.dfsg-2+b1_armhf.deb
+libiw30_30~pre9-8_armhf.deb
+libgcc1_4.9.2-10+deb8u1_armhf.deb
