@@ -250,3 +250,9 @@ libperl4-corelibs-perl_0.003-1_all.deb
 perl-modules_5.20.2-3+deb8u11_all.deb
 htop_1.0.3-1_armhf.deb
 psmisc_22.21-2_armhf.deb
+gdb_7.7.1+dfsg-5_armhf.deb
+libexpat1_2.1.0-6+deb8u4_armhf.deb
+libpython2.7_2.7.9-2+deb8u1_armhf.deb
+libpython2.7-stdlib_2.7.9-2+deb8u1_armhf.deb
+libpython2.7-minimal_2.7.9-2+deb8u1_armhf.deb
+mime-support_3.58_all.deb
