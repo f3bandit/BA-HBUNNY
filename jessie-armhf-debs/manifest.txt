@@ -190,3 +190,4 @@ perl_5.20.2-3+deb8u11_armhf.deb
 pkg-config_0.28-1_armhf.deb
 unzip_6.0-16+deb8u3_armhf.deb
 xz-utils_5.1.1alpha+20120614-2+b3_armhf.deb
+sqlite3_3.8.7.1-1+deb8u2_armhf.deb
