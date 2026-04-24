@@ -114,3 +114,69 @@ jessie-armhf-debs/
 ## Usage
 
 ### 1. Copy Script to Bunny
+
+cp install_bb_aio_v8_trimmed_targets_full_repo.sh /root/udisk/scripts/install_bb_aio.sh
+
+### 2. Run Installer
+
+sh /root/udisk/scripts/install_bb_aio.sh
+
+---
+
+## First Run Requirement
+
+Set the Bash Bunny switch to:
+SWITCH 1 (arming mode)
+This allows the device to access the network and download required packages.
+
+---
+
+## Offline Usage
+
+After the initial run, the system can operate fully offline:
+sh install_bb_aio.sh
+All packages will be installed from:
+/root/bb_updates/localrepo
+
+---
+
+## Manual Package Installation
+
+### Using APT (Recommended)
+
+apt-get
+-o Dir::Etc::sourcelist=/etc/apt/sources.list.d/bb-local.list
+-o Dir::Etc::sourceparts=-
+install <package>
+
+
+Example:
+apt-get install git
+
+---
+
+### Using dpkg
+
+cd /root/bb_updates/debs
+dpkg -i package.deb
+apt-get -f install
+
+---
+
+### Adding New Packages
+
+1. Place `.deb` files into:
+/root/bb_updates/debs
+
+2. Rebuild the local repo:
+cd /root/bb_updates/localrepo
+
+rm -f Packages Packages.gz
+
+for deb in *.deb; do
+dpkg-deb -f "$deb" >> Packages
+echo "Filename: ./$deb" >> Packages
+echo "" >> Packages
+done
+
+gzip -c Packages > Packages.gz
