@@ -224,3 +224,6 @@ libkrb5support0_1.12.1+dfsg-19+deb8u4_armhf.deb
 libsasl2-2_2.1.26.dfsg1-13+deb8u1_armhf.deb
 libgmp10_6.0.0+dfsg-6_armhf.deb
 libsasl2-modules-db_2.1.26.dfsg1-13+deb8u1_armhf.deb
+passwd_4.2-3+deb8u4_armhf.deb
+libaudit1_2.4-1+b1_armhf.deb
+libaudit-common_2.4-1_all.deb
