@@ -242,3 +242,4 @@ libisccc90_9.9.5.dfsg-9+deb8u15_armhf.deb
 socat_1.7.2.4-2_armhf.deb
 libwrap0_7.6.q-25_armhf.deb
 telnet_0.17-36_armhf.deb
+whois_5.2.7_armhf.deb
